@@ -97,6 +97,11 @@
 | **usage_status** | Text | - | 10 | สถานะการใช้งาน | Unused |
 
 ---
+#### **ER-Diagram**
+<img width="1055" height="582" alt="ER-Diagram" src="https://github.com/user-attachments/assets/cd1a7100-65bb-47a0-ab24-803a9e4e73e1" />
+
+---
+
 
 ## ⚙️ **ขั้นตอนการติดตั้ง (Installation Guide)**
 
