@@ -56,6 +56,47 @@
 | **General User** | `user_test` | `user123` |
 
 ---
+### **🗂️ รายละเอียดโครงสร้างฐานข้อมูล (Data Dictionary)**
+รายละเอียดฟิลด์ข้อมูลของแต่ละตารางที่ใช้ในระบบ **TrackBox**:
+
+#### **1. ตาราง: USERS (ข้อมูลผู้ใช้งาน)**
+| Name | Data Type | Data Format | Field Size | Description | Example |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **user_id** | Integer | - | - | รหัสผู้ใช้งาน | 1 |
+| **username** | Text | - | 50 | ชื่อบัญชีผู้ใช้ | boonyapat99 |
+| **password** | Text | - | 255 | รหัสผ่าน | hash_pwd_123 |
+| **full_name** | Text | - | 200 | ชื่อและนามสกุล | บุญยพัต จ้อยเจริญ |
+| **phone_number** | Text | 0xxxxxxxxx | 15 | เบอร์โทรศัพท์ | 0812345678 |
+| **email** | Text | - | 100 | อีเมล | test@gmail.com |
+
+#### **2. ตาราง: SMARTBOXES (ข้อมูลลงทะเบียนกล่องพัสดุ)**
+| Name | Data Type | Data Format | Field Size | Description | Example |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **box_id** | Integer | - | - | รหัสกล่องพัสดุ | 101 |
+| **user_id** | Integer | - | - | รหัสเจ้าของกล่อง | 1 |
+| **location_name** | Text | - | 100 | ชื่อเรียกจุดติดตั้ง | หน้าประตูรั้ว |
+| **connection_status** | Text | - | 10 | สถานะการเชื่อมต่อ | Online |
+
+#### **3. ตาราง: ACTIVITYLOGS (ข้อมูลประวัติการทำงานและสถานะ)**
+| Name | Data Type | Data Format | Field Size | Description | Example |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **log_id** | Integer | - | - | รหัสบันทึก | 5001 |
+| **box_id** | Integer | - | - | รหัสกล่องพัสดุ | 101 |
+| **timestamp** | DateTime | DD/MM/YYYY | - | วัน-เวลาที่บันทึก | 22/04/2026 |
+| **action_event** | Text | - | 50 | เหตุการณ์ที่เกิดขึ้น | Delivery |
+| **box_status** | Text | - | 50 | สถานะของกล่อง | Occupied |
+
+#### **4. ตาราง: TEMPORARYPASSWORDS (ข้อมูลรหัสผ่านชั่วคราว)**
+| Name | Data Type | Data Format | Field Size | Description | Example |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **otp_id** | Integer | - | - | รหัสรายการ | 901 |
+| **box_id** | Integer | - | - | รหัสกล่องพัสดุ | 101 |
+| **otp_code** | Text | - | 10 | รหัสผ่านชั่วคราว | 552914 |
+| **created_at** | DateTime | DD/MM/YYYY | - | เวลาที่สร้าง | 22/04/2026 |
+| **expired_at** | DateTime | DD/MM/YYYY | - | เวลาหมดอายุ | 22/04/2026 |
+| **usage_status** | Text | - | 10 | สถานะการใช้งาน | Unused |
+
+---
 
 ## ⚙️ **ขั้นตอนการติดตั้ง (Installation Guide)**
 
